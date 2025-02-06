@@ -14,3 +14,7 @@
     border: whitesmoke 3px solid;
     border-radius: 8px;
   }
+
+  li img {
+    width: 100px;
+  }

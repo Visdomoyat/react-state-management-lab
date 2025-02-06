@@ -9,7 +9,7 @@ function Fighters() {
             price: 12,
             strength: 6,
             agility: 4,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/0c2d6b.png',
+            img: 'https://wallpapercave.com/wp/hFzJ78N.jpg',
         },
         {
             id: 2,
@@ -17,7 +17,7 @@ function Fighters() {
             price: 10,
             strength: 5,
             agility: 5,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/033a16.png',
+            img: 'https://www.pixelstalk.net/wp-content/uploads/2016/10/Disney-Character-Wallpapers-HD-Desktop.jpg',
         },
         {
             id: 3,
@@ -25,7 +25,7 @@ function Fighters() {
             price: 18,
             strength: 7,
             agility: 8,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/262c36.png',
+            img: 'https://harunmudak.com/wp-content/uploads/2020/12/cute-cartoon-characters-1.png',
         },
         {
             id: 4,
@@ -33,7 +33,7 @@ function Fighters() {
             price: 14,
             strength: 7,
             agility: 6,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/3c1e70.png',
+            img: 'https://pluspng.com/img-png/png-disney-characters-pinoc-png-2000.png',
         },
         {
             id: 5,
@@ -41,7 +41,7 @@ function Fighters() {
             price: 20,
             strength: 6,
             agility: 8,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/4b2900.png',
+            img: 'https://www.fotolip.com/wp-content/uploads/2016/06/disney-cartoon_575a742bc182c.jpg',
         },
         {
             id: 6,
@@ -49,7 +49,7 @@ function Fighters() {
             price: 15,
             strength: 5,
             agility: 7,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/5a1e02.png',
+            img: 'https://2.bp.blogspot.com/-RgxTTFbpAgY/UUCAUA7CS9I/AAAAAAAAGLU/TLqTuhXjhXc/s1600/16.png',
         },
         {
             id: 7,
@@ -57,7 +57,7 @@ function Fighters() {
             price: 16,
             strength: 6,
             agility: 5,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/5e103e.png',
+            img: 'https://tse2.mm.bing.net/th?id=OIP.hn7emSifAATkd1lysjoyzQHaIS&pid=Api',
         },
         {
             id: 8,
@@ -65,7 +65,7 @@ function Fighters() {
             price: 11,
             strength: 8,
             agility: 3,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/67060c.png',
+            img: 'https://4.bp.blogspot.com/-i_RV7V9aNK4/Uhx3wf9e4aI/AAAAAAAATL4/Q6Eh2_FY_c8/s1600/picme3.png',
         },
         {
             id: 9,
@@ -73,7 +73,7 @@ function Fighters() {
             price: 17,
             strength: 5,
             agility: 9,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/ac3220.png',
+            img: 'https://www.freeiconspng.com/uploads/little-einsteins-cartoon-characters-png-3.png',
         },
         {
             id: 10,
@@ -81,7 +81,7 @@ function Fighters() {
             price: 22,
             strength: 7,
             agility: 6,
-            img: 'https://pages.git.generalassemb.ly/modular-curriculum-all-courses/react-state-management-lab/assets/e41f26.png',
+            img: 'https://1.bp.blogspot.com/-ZhjVLFwu8Ak/VNongaSImuI/AAAAAAAAxiw/vpRzGZfcQKE/s1600/0_87359_85604ac5_orig.png',
         },
     ])
     const [team, setTeam] = useState([]);
@@ -94,12 +94,12 @@ function Fighters() {
 
     const handleAddFighter = (fighter) => {
         if (fighter.price > money) {
-          console.log(team)
+          alert('Insufficient Funds')
           return;
         } 
             
         setTeam([...team, fighter])
-        setMoney(money - fighter.price)
+        setMoney( (money) => money - fighter.price)
         setZombieFighters(zombieFighters.filter(f => f.id !== fighter.id))
         setTotalStrength((totalStrength)  => totalStrength + fighter.strength)
         setTotalAgility((totalAgility) => totalAgility + fighter.agility)
@@ -128,8 +128,8 @@ function Fighters() {
         <>
           <h1>Zombie Fighters</h1>
           <h3><strong>Money: ${money}</strong></h3>
-          <h3><strong>Team Strength: 0 </strong></h3>
-          <h3><strong>Team Agility: 0 </strong></h3>
+          <h3><strong>Team Strength: {totalStrength} </strong></h3>
+          <h3><strong>Team Agility: {totalAgility} </strong></h3>
           <h3>Fighters</h3>
               <ul>
               {zombieFighters.map((zombieFighter, id) => (
@@ -147,7 +147,7 @@ function Fighters() {
            
             <div>
             
-            {team.length === 0 ? <p>"pick some team members!"</p>:(
+            {team.length === 0 ? <p>pick some team members!</p>:(
               <ul>
                 {
                     team.map(fighter => (
