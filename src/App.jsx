@@ -1,11 +1,12 @@
-import { useState } from 'react'
-
+import Fighters from './components/Fighters/Fighters'
+import './App.css'
 
 const App = () => {
-
-  return (
-    <h1>Hello world!</h1>
-  );
+  
+return (
+  <Fighters />
+  
+)
 }
 
 export default App
